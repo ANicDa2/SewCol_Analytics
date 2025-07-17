@@ -56,9 +56,7 @@ def main():
     st.plotly_chart(fig_items)
 
     # Plot average price over time
-    avg_price_over_time = filtered_df.groupby(filtered_df['ItemCreationDate'].dt.to_period('M'))['Price'].mean().reset_index(name='Average Price')
-    avg_price_over_time['ItemCreationDate'] = avg_price_over_time['ItemCreationDate'].dt.to_timestamp()
-    fig_price = px.line(avg_price_over_time, x='ItemCreationDate', y='Average Price', title='Average Price Over Time')
+    fig_price = px.scatter(filtered_df, x='ItemCreationDate', y='Price', title='Price Over Time')
     st.plotly_chart(fig_price)
 
     # Plot price distribution grouped by $100
