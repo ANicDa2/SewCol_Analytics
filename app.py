@@ -62,7 +62,7 @@ def main():
     # Plot price distribution grouped by $100
     max_price = int(filtered_df['Price'].max()) + 100
     number_bins = int(max_price/100)
-    fig_price_dist = px.histogram(filtered_df, x="Price", nbins = number_bins)
+    fig_price_dist = px.histogram(filtered_df, x="Price", nbins = number_bins, title='Price Buckets')
     st.plotly_chart(fig_price_dist)
 if __name__ == "__main__":
     main()
