@@ -21,4 +21,4 @@ def combine_csv_files(input_directory, output_file):
     combined_df.to_csv(output_file, index=False)
 
 if __name__ == "__main__":
-    combine_csv_files('app_data', 'data.csv')
+    combine_csv_files('data', 'app_data\\data.csv')
