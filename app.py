@@ -35,7 +35,7 @@ def main():
     st.title("Ebay Market Research")
 
     # Load data
-    df = load_data('data\data.csv')
+    df = load_data('app_data\data.csv')
 
     # Filter by Brand
     brands = df['Brand'].unique()
