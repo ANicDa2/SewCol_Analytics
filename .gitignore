@@ -1,0 +1,4 @@
+.aider*
+.env
+*.json
+*.csv
