@@ -56,7 +56,7 @@ def main():
     st.plotly_chart(fig_items)
 
     # Plot average price over time
-    fig_price = px.scatter(filtered_df, x='ItemCreationDate', y='Price', title='Price Over Time', trendline='ols')
+    fig_price = px.scatter(filtered_df, x='ItemCreationDate', y='Price', title='Price Over Time', trendline='ols', trendline_color_override="red")
     st.plotly_chart(fig_price)
 
     # Plot price distribution grouped by $100
