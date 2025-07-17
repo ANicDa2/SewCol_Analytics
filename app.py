@@ -60,10 +60,9 @@ def main():
     st.plotly_chart(fig_price)
 
     # Plot price distribution grouped by $100
-    price_bins = pd.cut(filtered_df['Price'], bins=range(0, int(filtered_df['Price'].max()) + 100, 100))
-    price_distribution = filtered_df.groupby(price_bins).size().reset_index(name='Count')
-    price_distribution['Price'] = price_distribution['Price'].astype(str)
-    fig_price_dist = px.bar(price_distribution, x='Price', y='Count', title='Price Distribution Grouped by $100')
+    max_price = int(filtered_df['Price'].max()) + 100
+    number_bins = int(max_price/100)
+    fig_price_dist = px.histogram(filtered_df, x="Price", nbins = number_bins)
     st.plotly_chart(fig_price_dist)
 if __name__ == "__main__":
     main()
