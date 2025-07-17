@@ -3,7 +3,6 @@ import pandas as pd
 import plotly.express as px
 from datetime import datetime
 
-st.set_page_config(layout="wide")
 @st.cache_data
 def load_data(file_path):
     df = pd.read_csv("https://raw.githubusercontent.com/ANicDa2/SewCol_Analytics/refs/heads/main/app_data/data.csv")
