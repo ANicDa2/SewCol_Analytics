@@ -52,8 +52,8 @@ def fetch_item_summary(category, brand, limit):
             data = response.json()
             item_summaries = data.get('itemSummaries', [])
             all_items.extend(item_summaries)
-            total = data.get('total', 0)
-            offset += limit
+            total = int(data.get('total', 0))
+            offset += int(limit)
             if offset >= total:
                 break
         else:
@@ -108,6 +108,6 @@ if __name__ == "__main__":
     item_summaries = fetch_item_summary(category, brand, limit)
 
     if item_summaries:
-        extract_to_csv(item_summaries, f'data\{brand}.csv')
+        extract_to_csv(item_summaries, f'data\\{brand}.csv')
     else:
         print("No item summaries found. CSV extraction skipped.")
