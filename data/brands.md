@@ -8,3 +8,4 @@ Zimmerman
 Carla Zampatti
 Shona Joy
 Artipoppe
+Sandro Paris
